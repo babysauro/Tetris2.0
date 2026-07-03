@@ -474,7 +474,7 @@ function mostraSchermataRisposta(haDettoSi) {
   if (haDettoSi) {
     responseIcon.innerText = '🍒🦕';
     responseTitle.innerText = 'Ti amo!';
-    responseText.innerText = 'Grazie per aver detto sì. Da qui in poi, un pezzo alla volta, insieme.';
+    responseText.innerText = 'Grazie per aver detto sì. Costruiamo casa un pezzo alla volta, insieme.';
   } else {
     responseIcon.innerText = '💌';
     responseTitle.innerText = 'Va bene così.';
