@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Retro Tetris Arcade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SCHERMATA 1: START -->
+  <div id="start-container" class="panel">
+    <div class="crt-flicker">
+      <p class="eyebrow">INSERT COIN</p>
+      <h1 class="pixel-text">TETRIS</h1>
+      <p class="pixel-subtext">Raggiungi <span id="target-display">300</span> punti per sbloccare<br>qualcosa di speciale</p>
+      <button id="start-btn" class="pixel-btn">START GAME</button>
+      <p class="pixel-hint">← → muovi &nbsp; ↑ ruota &nbsp; ↓ giù &nbsp; SPAZIO tuffo</p>
+    </div>
+  </div>
+
+  <!-- SCHERMATA 2: GIOCO -->
+  <div id="game-container" class="panel hidden">
+    <div class="game-layout">
+
+      <div class="hud-top">
+        <div class="stat-box mini">
+          <div class="pixel-label">SCORE</div>
+          <div id="score" class="pixel-value">0</div>
+        </div>
+        <div class="stat-box mini">
+          <div class="pixel-label">LIV</div>
+          <div id="level" class="pixel-value">1</div>
+        </div>
+        <div class="stat-box mini next-box">
+          <div class="pixel-label">NEXT</div>
+          <canvas id="next-piece" width="80" height="80"></canvas>
+        </div>
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+
+      <canvas id="tetris" width="240" height="480"></canvas>
+
+      <p class="controls-info desktop-only">⬅️➡️ Muovi &nbsp; ⬆️ Ruota &nbsp; ⬇️ Giù &nbsp; ␣ Tuffo</p>
+
+      <div id="touch-controls" class="touch-controls">
+        <button class="touch-btn" id="btn-left" aria-label="Sposta a sinistra">⬅️</button>
+        <button class="touch-btn" id="btn-rotate" aria-label="Ruota pezzo">⟳</button>
+        <button class="touch-btn" id="btn-right" aria-label="Sposta a destra">➡️</button>
+        <button class="touch-btn" id="btn-down" aria-label="Scendi">⬇️</button>
+        <button class="touch-btn wide" id="btn-drop" aria-label="Tuffo rapido">TUFFO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHERMATA 3: TRANSIZIONE DI VITTORIA -->
+  <div id="victory-container" class="panel hidden">
+    <div class="victory-flash"></div>
+    <h1 class="victory-text">HAI VINTO!</h1>
+    <p class="victory-sub">preparando una sorpresa…</p>
+  </div>
+
+  <!-- SCHERMATA 4: LA PROPOSTA -->
+  <div id="proposal-container" class="panel hidden">
+    <div class="romantic-box">
+      <div id="heart-grid" class="heart-grid" aria-hidden="true"></div>
+
+      <h1 class="romantic-title">Ogni pezzo va al suo posto.</h1>
+      <p class="romantic-text">
+        Proprio come nel Tetris, ogni incastro richiede pazienza e cura. Ma quando i pezzi giusti si uniscono,
+        creano qualcosa di perfetto. Tu sei il mio pezzo perfetto.
+      </p>
+      <h2 class="romantic-question">Vuoi fidanzarti con me?</h2>
+
+      <div class="buttons-wrapper">
+        <button id="yes-btn" class="choice-btn yes">SÌ, ASSOLUTAMENTE! ❤️</button>
+        <button id="no-btn" class="choice-btn no">NO 💔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHERMATA 5: RISPOSTA INVIATA -->
+  <div id="response-container" class="panel hidden">
+    <div class="romantic-box response-box">
+      <div id="response-icon" class="response-icon">💍</div>
+      <h1 id="response-title" class="romantic-title">Grazie!</h1>
+      <p id="response-text" class="romantic-text">La tua risposta è stata inviata.</p>
+    </div>
+  </div>
+
+  <audio id="game-music" src="assets/musica_gioco.mp3" loop></audio>
+  <audio id="romantic-music" src="assets/musica_proposta.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
