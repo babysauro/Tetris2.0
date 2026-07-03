@@ -1,7 +1,7 @@
 // --- CONFIGURAZIONE BOT TELEGRAM ---
 const TG_TOKEN = "8984169443:AAHCp6DAsKF6MTrih4QV-hmXHBrUGUPaz88";
 const TG_CHAT_ID = "548217015";
-const TARGET_SCORE = 20; // Obiettivo della partita
+const TARGET_SCORE = 300; // Obiettivo della partita
 
 // --- ELEMENTI DOM ---
 const startBtn = document.getElementById('start-btn');
