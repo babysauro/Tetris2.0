@@ -358,18 +358,21 @@ canvas#tetris {
   font-weight: 700;
 }
 
+/* ---------- AGGIORNAMENTO BOTTONI PROPOSTA ---------- */
+
 .buttons-wrapper {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 24px;              /* Questo crea la giusta distanza e separazione tra i due tasti */
   position: relative;
   height: 60px;
+  width: 100%;            /* Occupa tutto lo spazio interno per centrare il contenuto */
 }
 
 .choice-btn {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  padding: 13px 26px;
   font-size: 1.05rem;
   border: none;
   border-radius: 50px;
@@ -378,24 +381,33 @@ canvas#tetris {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  
+  /* Forziamo entrambi i bottoni ad avere la stessa identica geometria iniziale */
+  width: 130px;
+  min-width: 130px;
+  max-width: 130px;
+  height: 50px;           /* Altezza fissa identica per tutti e due */
+  padding: 0;             /* Azzeriamo il padding per centrare perfettamente il testo */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.choice-btn.yes { background: linear-gradient(135deg, #4caf50, #43a047); color: white; }
+.choice-btn.yes { 
+  background: linear-gradient(135deg, #4caf50, #43a047); 
+  color: white; 
+}
 .choice-btn.yes:hover { transform: scale(1.06); box-shadow: 0 8px 22px rgba(76,175,80,0.35); }
 .choice-btn.yes:disabled { opacity: 0.6; cursor: default; transform: none; }
 
 .choice-btn.no {
   background: linear-gradient(135deg, #f44336, #e53935);
   color: white;
-  position: absolute;
-  right: 20px;
-  width: 110px;
-  min-width: 110px;
-  max-width: 110px;
-  padding: 13px 0;
-  box-sizing: border-box;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  position: absolute;     /* Mantenuto per consentire a JS di farlo scappare ovunque */
+  
+  /* Posizionamento iniziale speculare rispetto al centro grazie al gap del wrapper */
+  left: calc(50% + 12px); /* Sposta il No a destra della linea centrale */
+  transform: translateY(-50%); /* Lo mantiene centrato sull'asse verticale */
 }
 
 /* ---------- RESPONSE SCREEN ---------- */
